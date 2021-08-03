@@ -1,0 +1,113 @@
+<div class="page-layout carded fullwidth" fusePerfectScrollbar>
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg mat-white-bg"></div>
+    <!-- / TOP BACKGROUND -->
+    <!-- HEADER -->
+
+    <!-- CENTER -->
+    <div class="center">
+        <!-- CONTENT HEADER -->
+        <div class="header p-30" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+            fxLayoutAlign.gt-xs="space-between center">
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+                <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon class="secondary-text s-18">home</mat-icon>
+                    <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                    <span class="secondary-text">iWork Company</span>
+                    <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                    <span class="secondary-text">Linkedin Ranking</span>
+                </div>                
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- HEADER -->
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="presentation-container" fxLayout="column" fxLayoutAlign="start stretch">
+                <div class="margin-top">
+                    <mat-card>
+                        <mat-card-content>
+                            <div class="upload-file-container" fxLayout="column" fxLayoutAlign="start stretch">
+                                <div class="margin-top">
+                                    <div class="header">
+                                        <p>Upload File</p>
+                                    </div>
+                                    <div class="text-style">
+                                        <div fxLayout="column">
+                                            <div fxLayout="row" class="padding-top">
+                                                <div fxFlex="40%">
+                                                    File
+                                                </div>
+                                            </div>
+                                            <div fxLayout="row" class="upload-div">
+                                                <div fxFlex="60%" fxLayoutAlign="start stretch">
+                                                    <label *ngIf="uploader?.queue.length> 0">
+                                                        {{ uploader.queue[0].file.name }}
+                                                    </label>
+                                                </div>
+                                                <div fxFlex="40%" fxLayout="row" fxLayoutAlign="end center">
+
+                                                    <input type="file" name="file" ng2FileSelect [uploader]="uploader" #fileInput class="hidden-file" accept=".in" />
+
+                                                    <button mat-raised-button matTooltip="Only text/plain
+                                                        files" (click)="fileInput.click()">Browse</button>
+                                                </div>
+                                            </div>
+                                            <div fxLayout="row" fxLayoutAlign="end center" class="padding-top">
+                                                <button class="success" mat-raised-button (click)="uploadAll()"
+                                                    [disabled]="!uploader.getNotUploadedItems().length">
+                                                    Upload File
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div fxLayout="column" class="grid-results" *ngIf="showGrid">                                
+                                <div class="apply-filter-option" [style.display]="showFilterRow ? 'none' : 'none'">
+                                    <dx-select-box #applyFilter id="useFilterApplyButton" [visible]="showFilterRow"
+                                        valueExpr="key" displayExpr="name"></dx-select-box>
+                                </div>
+                                <div id="DivGrid">
+                                    <dx-data-grid id="gridContainer" [dataSource]="linkedIn" allowColumnReordering="true"
+                                        allowColumnResizing="true" columnAutoWidth="true" [showColumnLines]="true"
+                                        [showRowLines]="true" [showBorders]="true" [rowAlternationEnabled]="true">
+                                        <dxo-load-panel [enabled]="true"></dxo-load-panel>
+                                        <!-- <dxo-editing mode="row"></dxo-editing> -->
+                                        <dxo-paging [pageSize]="10">
+                                        </dxo-paging>
+                                        <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 30, 100]"
+                                            [showInfo]="true" [visible]="true">
+                                        </dxo-pager>
+                                        <dxo-export [enabled]="true" fileName="Profiles"></dxo-export>
+                                        <dxo-sorting mode="multiple"></dxo-sorting>
+                                        <dxo-filter-panel [visible]="showFilterRow"></dxo-filter-panel>
+                                        <dxo-filter-row [visible]="showFilterRow" [applyFilter]="applyFilter"></dxo-filter-row>
+                                        <dxo-header-filter [visible]="showHeaderFilter"></dxo-header-filter>
+
+                                        <dxi-column dataField="personId" caption="Person Id" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="name" caption="First Name" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="lastName" caption="Last Name" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="currentRole" caption="Current Role" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="country" caption="Country" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="industry" caption="Industry" cellTemplate="inactiveCellTemplate"></dxi-column>
+                                        <dxi-column dataField="rating" caption="Rating" cellTemplate="inactiveCellTemplate"
+                                            dataType="number" format="#0.00"></dxi-column>
+                                        <div *dxTemplate="let data of 'inactiveCellTemplate'" [class]="data.data.loanStatusId == 3 ? 'inactive' : 'active'">
+                                            <span class="diff">{{data.value}}</span>
+                                        </div>
+
+                                    </dx-data-grid>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

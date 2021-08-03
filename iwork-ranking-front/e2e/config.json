@@ -1,0 +1,136 @@
+{
+    "recommendations": {
+        "limit": 2,
+        "value": 1
+    },
+    "connections": {
+        "limit": 2,
+        "value": 1
+    },
+    "roles": [
+        {
+            "name": "vice president",
+            "value": 1
+        },
+        {
+            "name": "creative services",
+            "value": 1
+        },
+        {
+            "name": "senior automation analyst",
+            "value": 1
+        },
+        {
+            "name": "photographer",
+            "value": 1
+        },
+        {
+            "name": "president",
+            "value": 1
+        },
+        {
+            "name": "funeral director",
+            "value": 1
+        },
+        {
+            "name": "software engineer iii",
+            "value": 1
+        },
+        {
+            "name": "senior partner",
+            "value": 1
+        },
+        {
+            "name": "principal scientist",
+            "value": 1
+        },
+        {
+            "name": "programmer",
+            "value": 1
+        }        
+    ],
+    "industries": [
+        {
+            "name": "financial services",
+            "value": 1
+        },
+        {
+            "name": "telecommunications",
+            "value": 1
+        },
+        {
+            "name": "computer software",
+            "value": 1
+        },
+        {
+            "name": "business services",
+            "value": 1
+        },
+        {
+            "name": "investment banking",
+            "value": 1
+        },
+        {
+            "name": "consumer electronics",
+            "value": 1
+        },
+        {
+            "name": "pharmaceuticals",
+            "value": 1
+        },
+        {
+            "name": "management consulting",
+            "value": 1
+        },
+        {
+            "name": "marketing and advertising",
+            "value": 1
+        },
+        {
+            "name": "hospital & health care",
+            "value": 1
+        }        
+    ],
+    "countries": [
+        {
+            "name": "united kingdom",
+            "value": 1
+        },
+        {
+            "name": "canada",
+            "value": 1
+        },
+        {
+            "name": "australia",
+            "value": 1
+        },
+        {
+            "name": "united kingdom",
+            "value": 1
+        },
+        {
+            "name": "brazil",
+            "value": 1
+        },
+        {
+            "name": "denmark",
+            "value": 1
+        },
+        {
+            "name": "finland",
+            "value": 1
+        },
+        {
+            "name": "france",
+            "value": 1
+        },
+        {
+            "name": "switzerland",
+            "value": 1
+        },
+        {
+            "name": "belgium",
+            "value": 1
+        }        
+    ]
+}
